@@ -3,25 +3,13 @@ directory containing a list of all possible words and reversing them. I found
 this generates decently reliable and reasonably creative results
 
 ```bash
-$ yarn ts-node bin/fantasyNames.ts | shuf -n 5 | column -t -s ' '
+$ yarn ts-node bin/fantasyNames.ts > names
+$ shuf -n 5 names | column -t -s ' '
 aisrep   persia
 latanerp prenatal
 mrah     harm
 zzar     razz
 ssid     diss
-```
-
-Because of how long reading a file with over 100,000 words takes. I highly
-recommend caching it and rerunning the shuffle whenever you want a fantasy name
-
-```bash
-$ yarn ts-node bin/fantasyNames.ts > names
-$ shuf -n 5 names | column -t -s ' '
-syesreh   herseys
-pans      snap
-skrap     parks
-cihtiloen neolithic
-tunlaw    walnut
 ```
 
 I've also found the quality of the list improves if you include other word lists
